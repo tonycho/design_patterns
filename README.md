@@ -7,3 +7,5 @@ This project mainly demonstrates the different design patterns in Ruby
 1. Singleton
 2. Factory
 3. Command
+4. Template
+
