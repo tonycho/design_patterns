@@ -19,9 +19,6 @@ module DesignPattern
 
     def draw_winner()
       winner = @entries[rand(@entries.count)]
-
-      p winner.inspect
-
       if winner
         p "The winner is #{winner.name}"
       else
@@ -36,8 +33,7 @@ module DesignPattern
   class Coupon < Offer
     def draw_winner()
       super
-      coupon = "50%OFF"
-      p "The coupon is #{coupon}"
+      p "The coupon is 50%OFF"
     end
   end
 end
