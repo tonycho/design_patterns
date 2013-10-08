@@ -1,5 +1,5 @@
-DesignPatterns
-==============
+Design Patterns in Ruby
+============================
 
 Design Pattern Practices in Ruby
 
