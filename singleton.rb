@@ -1,16 +1,20 @@
-class Singleton
-  @@instance = nil
+module DesignPattern
+  class Singleton
+    @@instance = nil
 
-  def initialize
+    def initialize
+    end
+
+    def self.instance()
+      @@instance == Singleton.new if (!@@instance)
+      return @@instance
+    end
+
+    #private_class_method :new
   end
-
-  def self.instance()
-    @@instance == Singleton.new if (!@@instance)
-    return @@instance
-  end
-
-  #private_class_method :new
 end
+
+include DesignPattern
 
 a = Singleton.instance()
 b = Singleton.instance()

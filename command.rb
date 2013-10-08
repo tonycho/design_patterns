@@ -1,57 +1,63 @@
-#command interface
-class Command
-  def execute
-  end
-end
+module DesignPattern
 
-class TVTurnOnCommand < Command
-  def initialize(tv)
-    @tv = tv
+  #command interface
+  class Command
+    def execute
+    end
   end
 
-  def execute()
-    @tv.turn_on
-  end
-end
+  class TVTurnOnCommand < Command
+    def initialize(tv)
+      @tv = tv
+    end
 
-class TVTurnOffCommand < Command
-  @tv = nil
-  def initialize(tv)
-    @tv = tv
+    def execute()
+      @tv.turn_on
+    end
   end
 
-  def execute()
-    @tv.turn_off
+  class TVTurnOffCommand < Command
+    @tv = nil
+
+    def initialize(tv)
+      @tv = tv
+    end
+
+    def execute()
+      @tv.turn_off
+    end
   end
-end
 
 # receiver
-class TV
-  def turn_on
-    puts "tv is turning on"
-  end
+  class TV
+    def turn_on
+      puts "tv is turning on"
+    end
 
-  def turn_off
-    puts "tv is turning off"
+    def turn_off
+      puts "tv is turning off"
+    end
   end
-end
 
 # invoker
-class RemoteControl
-  def initialize
-    @commands = []
-  end
+  class RemoteControl
+    def initialize
+      @commands = []
+    end
 
-  def add_command(command)
-    @commands << command
-  end
+    def add_command(command)
+      @commands << command
+    end
 
-  def run()
-    @commands.each do |command|
-      command.execute
+    def run()
+      @commands.each do |command|
+        command.execute
+      end
     end
   end
 end
+
+include DesignPattern
 
 tv = TV.new
 command_tv_turn_on = TVTurnOnCommand.new(tv)
