@@ -10,3 +10,4 @@ This project mainly demonstrates the different design patterns in Ruby
 4. Singleton
 5. Strategy
 6. Template
+7. Adapter
